@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,8 @@ class HomeController extends Controller
     public function index()
     {
         $post = Post::with('user','categorie')->get();
-         return view("home", compact('post'));
+        $users = User::all();
+         return view("home", compact('post','users'));
     }
 
     /**

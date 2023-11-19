@@ -62,7 +62,44 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
+  <script>
+    var currentAudio = null;
+    var currentPlayIcon = null;
 
+    function togglePlay(index) {
+        var audio = document.getElementById('audio-' + index);
+        var playIcon = document.getElementById('play-icon-' + index);
+
+        if (currentAudio && currentAudio !== audio) {
+            currentAudio.pause();
+            currentPlayIcon.innerText = 'Play';
+        }
+
+        if (audio.paused) {
+            audio.play();
+            playIcon.innerText = 'Pause';
+        } else {
+            audio.pause();
+            playIcon.innerText = 'Play';
+        }
+
+        currentAudio = audio;
+        currentPlayIcon = playIcon;
+    }
+
+    function handleSongEnd() {
+        if (currentAudio && currentPlayIcon) {
+            currentPlayIcon.innerText = 'Play';
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var audioElements = document.getElementsByTagName('audio');
+        for (var i = 0; i < audioElements.length; i++) {
+            audioElements[i].addEventListener('ended', handleSongEnd);
+        }
+    });
+</script>
 </body>
 
 </html>

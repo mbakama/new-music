@@ -19,7 +19,9 @@
                     <a href="{{ route('about') }}" @if (Route::currentRouteName() == 'about') class="active" @endif>A propos</a>
                     {{-- <a href="index.html#about">A propos</a> --}}
                 </li>
-                <li><a href="{{ route('music') }}" @if (Route::currentRouteName() == 'music') class="active" @endif>Music</a>
+                {{-- <li><a href="{{ route('music') }}" @if (Route::currentRouteName() == 'music') class="active" @endif>Music</a> --}}
+              <li><a href="{{ route('musics') }}" @if (Route::currentRouteName() == 'musics') class="active" @endif>Music</a>
+
                 </li>
                 <li><a href="{{ route('video') }}" @if (Route::currentRouteName() == 'video') class="active" @endif>Vidéo</a>
                 </li>

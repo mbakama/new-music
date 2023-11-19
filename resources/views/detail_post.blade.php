@@ -42,16 +42,16 @@
                 <article class="article">
     
                   <div class="post-img">
-                    <img src="{{ asset('assets/img/blog/blog-1.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/'. $post->image) }}" alt="" class="img-fluid">
                   </div>
     
                   <h2 class="title">{{ $post->titre }}</h2>
     
                   <div class="meta-top">
                     <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">{{ $post->user->name }}</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{ $post->formatted_date }}</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">@if ($post->comments->count()>0)
+                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ $post->user->name }}</a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="2020-01-01">{{ $post->formatted_date }}</time></a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">@if ($post->comments->count()>0)
                           {{ $post->comments->count() }}
                       @endif
                          Comments</a></li>

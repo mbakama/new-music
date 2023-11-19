@@ -7,12 +7,14 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span style="font-size: 20px">Tomorrow's Generation</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>
+            L’objectif global  de <span class="fw-bold">TMG</span> est d’éveiller les âmes et d’attirer les cœurs pour s’embraser du feu de l’amour de Dieu ; influencer la société en générale et la communauté en particulier à vivre une vie conformément aux enseignements divins.
+          </p>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=100064378344515&__cft__[0]=AZXvXYrv31dDhx5XHMGK1erUJgHBg6bVvD91sBBGdEacPpK5qk9aaZDMn630KwBVRN6RuhySLY82JpTwkqaB29UY6JoH07MKds-XyOSQwL1kLPGyXJZd1iP3uR9kXSBsvFwUuLOGCk-RMGorGdUeQGbrSlcm7_14RHzIaV-mAef0y0BjR5BuilmKufYLFHD5GII&__tn__=-]K-R" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@tomorrowgenerationtmgoffic7237" target="_blank"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
 
@@ -27,7 +29,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        {{-- <div class="col-lg-2 col-6 footer-links">
           <h4>Services</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
@@ -36,15 +38,15 @@
             <li><a href="#">Marketing</a></li>
             <li><a href="#">Graphic Design</a></li>
           </ul>
-        </div>
+        </div> --}}
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contactez nous</h4>
-          <p>A108 Adam Street</p>
+          <p>Binza Ozone 108 Adam Street</p>
           <p>Ngaliema, NY 535022</p>
           <p>RDC</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+243 8145 3222 7</span></p>
-          <p><strong>Email:</strong> <span>info@tomorrowgeneration.com</span></p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+243 823 507 375</span></p>
+          <p><strong>Email:</strong> <span>tomorrowgeneration3@gmail.com</span></p>
         </div>
 
       </div>

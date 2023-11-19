@@ -117,20 +117,21 @@
                         </ul><!-- End Portfolio Filters -->
 
                         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
+                            @foreach($users as $user)
                             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                                 <img src="assets/img/team/gdk1.jpg" class="img-fluid"
                                     alt="">
                                 <div class="portfolio-info">
-                                    <h4>App 1</h4>
-                                    <p>Lorem ipsum, dolor sit</p>
-                                    <a href="assets/img/team/gdk1.jpg" title="App 1"
+                                    <h4>{{$user->name }}</h4>
+                                    <p>{{$user->boi}}</p>
+                                    <a href="assets/img/team/gdk1.jpg" title="{{$user->name }}"
                                         data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                             class="bi bi-zoom-in"></i></a>
                                     <a href="portfolio-details.html" title="More Details" class="details-link"><i
                                             class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div><!-- End Portfolio Item -->
+                            @endforeach
                             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                                 <img src="assets/img/team/rebecca1.jpg" class="img-fluid"
                                     alt="">
@@ -203,7 +204,28 @@
                 <div class="container">
 
                     <div class="row gy-5">
-
+                        @foreach($users as $artist)
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="{{ asset('storage/'. $value->artist) }}" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href="#"><i class="bi bi-twitter"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info text-center">
+                                <h4>{{ $artist->name}} {{ $artist->prenom}}</h4>
+                                @if($artist->role !=="artiste")
+                                <span>{{ $artist->role }} </span>
+                                @else
+                                <span>{{ $artist->role }} </span>
+                                @endif
+                                <p>{{$artist->bio }}</p>
+                            </div>
+                        </div><!-- End Team Member -->
+                        @endforeach
                         <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="assets/img/team/gdk1.jpg" class="img-fluid" alt="">
@@ -325,7 +347,7 @@
                             <article>
 
                                 <div class="post-img">
-                                    <img src="assets/img/blog/groupe.jpg" alt="" class="img-fluid">
+                                    <img src="{{ asset('storage/'. $value->image) }}" alt="" class="img-fluid">
                                 </div>
 
                                 <p class="post-category">{{ $value->categorie->categorie_name }}</p>
@@ -335,12 +357,13 @@
                                 </h2>
 
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/img/blog/j.jpg" alt=""
+                                    {{-- <img src="assets/img/blog/j.jpg" alt="" --}}
+                                    <img src="{{ asset('storage/'. $value->user->photo) }}" alt="Image"
                                         class="img-fluid post-author-img flex-shrink-0">
                                         <div class="post-meta">
                                             <p class="post-author">{{ $value->user->name }}</p>
                                             <p class="post-date">
-                                                <time datetime="2022-01-01">{{ $value->created_at }}</time>
+                                                <time datetime="2022-01-01">{{ $value->formatted_date }}</time>
                                             </p>
                                         </div>
                                 </div>
@@ -390,8 +413,7 @@
                                 </h2>
 
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/img/blog/j.jpg" alt=""
-                                        class="img-fluid post-author-img flex-shrink-0">
+                                    <img src="assets/img/blog/j.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                                         <div class="post-meta">
                                             <p class="post-author">Jully</p>
                                             <p class="post-date">
@@ -469,12 +491,10 @@
                             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                                 data-aos-delay="200">
                                 <div class="row gy-4">
-
                                     <div class="col-md-6">
                                         <input type="text" name="name" class="form-control"
                                             placeholder="Your Name" required>
                                     </div>
-
                                     <div class="col-md-6 ">
                                         <input type="email" class="form-control" name="email"
                                             placeholder="Your Email" required>

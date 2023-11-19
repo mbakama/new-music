@@ -41,48 +41,26 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4 posts-list">
-
+                    @foreach($affs as $aff)
                     <div class="col-xl-4 col-lg-6">
                         <article> 
-
+                            {{-- <a href="https://www.youtube.com/watch?v=XXXXXXXXXXX">Regarder la vidéo sur YouTube</a> --}}
+                            <div class="video-container" style="margin-bottom: 10px">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $aff->id_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                              </div>
+                              <span>Interpreté par :</span>
+                              <div class="d-flex align-items-center">
+                                <img src="assets/img/blog/j.jpg" style="width: 30px" alt=""
+                                    class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">{{ $aff->user->name }}</p>
+                                    </div>
+                            </div>
                         </article>
                     </div><!-- End post list item -->
-
-                    <div class="col-xl-4 col-lg-6">
-                        <article>
-
-                            
-                        </article>
-                    </div><!-- End post list item -->
-
-                    <div class="col-xl-4 col-lg-6">
-                        <article>
-
-                            
-                        </article>
-                    </div><!-- End post list item -->
-
-                    <div class="col-xl-4 col-lg-6">
-                        <article>
-
-                           
-                        </article>
-                    </div><!-- End post list item -->
-
-                    <div class="col-xl-4 col-lg-6">
-                        <article>
-
-                           
-                        </article>
-                    </div><!-- End post list item -->
-
-                    <div class="col-xl-4 col-lg-6">
-                        <article>
-
-                            
-                        </article>
-                    </div><!-- End post list item -->
-
+                    @endforeach
+                   
+                    
                 </div><!-- End blog posts list -->
 
                 <div class="pagination d-flex justify-content-center">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -28,7 +29,16 @@ class UserController extends Controller
             ], 404);
         }
     }
+   public function connect()
+   {
+     if(Auth::check()){
+        $user = Auth::user();
 
+
+        return view('admin.dashboard', compact('user'));
+     }
+    
+   }
     /**
      * Show the form for creating a new resource.
      */

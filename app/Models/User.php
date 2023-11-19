@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'prenom',
+        'role',
+        'sexe',
+        'adresse'
     ];
 
     /**
@@ -46,5 +50,9 @@ class User extends Authenticatable
     public function post()
     {
         return $this->hasMany(Post::class, 'user_id');
+    }
+    public function video()
+    {
+        return $this->hasMany(Video::class, 'user_id');
     }
 }
