@@ -2,22 +2,22 @@
 <div class="leftside-menu">
 
     <!-- Brand Logo Light -->
-    <a href="index.html" class="logo logo-light">
+    <a href="{{ route('dashboard') }}" class="logo logo-light">
         <span class="logo-lg">
-            <img src="assets/images/logo.png" alt="logo">
+            <img src="{{ url('assets/images/logo.png') }}" alt="logo" />
         </span>
         <span class="logo-sm">
-            <img src="assets/images/logo-sm.png" alt="small logo">
+            <img src="{{ url('assets/images/logo-sm.png') }}" alt="small logo" />
         </span>
     </a>
 
     <!-- Brand Logo Dark -->
     <a href="index.html" class="logo logo-dark">
         <span class="logo-lg">
-            <img src="assets/images/logo-dark.png" alt="dark logo">
+            <img src="{{ url('assets/images/logo-dark.png') }}" alt="dark logo" />
         </span>
         <span class="logo-sm">
-            <img src="assets/images/logo-dark-sm.png" alt="small logo">
+            <img src="{{ url('assets/images/logo-dark-sm.png') }}" alt="small logo" />
         </span>
     </a>
 
@@ -36,457 +36,42 @@
         <!-- Leftbar User -->
         <div class="leftbar-user">
             <a href="pages-profile.html">
-                <img src="{{ asset('storage/'. Auth::user()->photo ) }}" alt="user-image" height="50" class="rounded-circle shadow-sm">
+                <img src="{{ asset('storage/' . Auth::user()->photo) }}" alt="user-image" height="50"
+                    class="rounded-circle shadow-sm">
                 <span class="leftbar-user-name mt-2">{{ Auth::user()->prenom }} {{ Auth::user()->name }}</span>
             </a>
         </div>
 
         <!--- Sidemenu -->
         <ul class="side-nav">
-
             <li class="side-nav-title">Navigation</li>
-
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                    <i class="uil-home-alt"></i>
-                    <span class="badge bg-success float-end">5</span>
-                    <span> Dashboards </span>
+                <a href="{{ route('dashboard') }}" class="side-nav-link">
+                    <i class="mdi mdi-home"></i>
+
+                    <span> Tableau de bord </span>
                 </a>
-                {{-- <div class="collapse" id="sidebarDashboards">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="dashboard-analytics.html">Analytics</a>
-                        </li>
-                        <li>
-                            <a href="index.html">Ecommerce</a>
-                        </li>
-                        <li>
-                            <a href="dashboard-projects.html">Projects</a>
-                        </li>
-                        <li>
-                            <a href="dashboard-crm.html">CRM</a>
-                        </li>
-                        <li>
-                            <a href="dashboard-wallet.html">E-Wallet</a>
-                        </li>
-                    </ul>
-                </div> --}}
             </li>
 
             <li class="side-nav-title">Apps</li>
 
-           <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCrm" aria-expanded="false" aria-controls="sidebarCrm" class="side-nav-link">
-                    <i class="uil uil-tachometer-fast"></i>
-                    <span class="badge bg-danger text-white float-end">New</span>
-                    <span> CRM </span>
-                </a>
-                <div class="collapse" id="sidebarCrm">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="crm-projects.html">Projects</a>
-                        </li>
-                        <li>
-                            <a href="crm-orders-list.html">Orders List</a>
-                        </li>
-                        <li>
-                            <a href="crm-clients.html">Clients</a>
-                        </li>
-                        <li>
-                            <a href="crm-management.html">Management</a>
-                        </li>
-                    </ul>
-                </div>
-            </li> 
-
-           
-          
-
-            <li class="side-nav-item">
-                <a href="apps-file-manager.html" class="side-nav-link">
-                    <i class="uil-folder-plus"></i>
-                    <a href="pages-profile.html">Profile</a>
->
-                </a>
-            </li>
-
            
 
-            <li class="side-nav-title">Components</li>
-
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false" aria-controls="sidebarBaseUI" class="side-nav-link">
-                    <i class="uil-box"></i>
-                    <span> Base UI </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarBaseUI">
+                
+                <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="ui-accordions.html">Accordions & Collapse</a>
+                            <a href="{{ route('get-artiste') }}">Gestion des patients</a>
+                            
                         </li>
                         <li>
-                            <a href="ui-alerts.html">Alerts</a>
+                            <a href="">dd</a>
                         </li>
-                        <li>
-                            <a href="ui-avatars.html">Avatars</a>
-                        </li>
-                        <li>
-                            <a href="ui-badges.html">Badges</a>
-                        </li>
-                        <li>
-                            <a href="ui-breadcrumb.html">Breadcrumb</a>
-                        </li>
-                        <li>
-                            <a href="ui-buttons.html">Buttons</a>
-                        </li>
-                        <li>
-                            <a href="ui-cards.html">Cards</a>
-                        </li>
-                        <li>
-                            <a href="ui-carousel.html">Carousel</a>
-                        </li>
-                        <li>
-                            <a href="ui-dropdowns.html">Dropdowns</a>
-                        </li>
-                        <li>
-                            <a href="ui-embed-video.html">Embed Video</a>
-                        </li>
-                        <li>
-                            <a href="ui-grid.html">Grid</a>
-                        </li>
-                        <li>
-                            <a href="ui-list-group.html">List Group</a>
-                        </li>
-                        <li>
-                            <a href="ui-modals.html">Modals</a>
-                        </li>
-                        <li>
-                            <a href="ui-notifications.html">Notifications</a>
-                        </li>
-                        <li>
-                            <a href="ui-offcanvas.html">Offcanvas</a>
-                        </li>
-                        <li>
-                            <a href="ui-placeholders.html">Placeholders</a>
-                        </li>
-                        <li>
-                            <a href="ui-pagination.html">Pagination</a>
-                        </li>
-                        <li>
-                            <a href="ui-popovers.html">Popovers</a>
-                        </li>
-                        <li>
-                            <a href="ui-progress.html">Progress</a>
-                        </li>
-                        <li>
-                            <a href="ui-ribbons.html">Ribbons</a>
-                        </li>
-                        <li>
-                            <a href="ui-spinners.html">Spinners</a>
-                        </li>
-                        <li>
-                            <a href="ui-tabs.html">Tabs</a>
-                        </li>
-                        <li>
-                            <a href="ui-tooltips.html">Tooltips</a>
-                        </li>
-                        <li>
-                            <a href="ui-links.html">Links</a>
-                        </li>
-                        <li>
-                            <a href="ui-typography.html">Typography</a>
-                        </li>
-                        <li>
-                            <a href="ui-utilities.html">Utilities</a>
-                        </li>
+                       
                     </ul>
                 </div>
             </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarExtendedUI" aria-expanded="false" aria-controls="sidebarExtendedUI" class="side-nav-link">
-                    <i class="uil-package"></i>
-                    <span> Extended UI </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarExtendedUI">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="extended-dragula.html">Dragula</a>
-                        </li>
-                        <li>
-                            <a href="extended-range-slider.html">Range Slider</a>
-                        </li>
-                        <li>
-                            <a href="extended-ratings.html">Ratings</a>
-                        </li>
-                        <li>
-                            <a href="extended-scrollbar.html">Scrollbar</a>
-                        </li>
-                        <li>
-                            <a href="extended-scrollspy.html">Scrollspy</a>
-                        </li>
-                        <li>
-                            <a href="extended-treeview.html">Treeview</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="widgets.html" class="side-nav-link">
-                    <i class="uil-layer-group"></i>
-                    <span> Widgets </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
-                    <i class="uil-streering"></i>
-                    <span> Icons </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarIcons">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="icons-remixicons.html">Remix Icons</a>
-                        </li>
-                        <li>
-                            <a href="icons-mdi.html">Material Design</a>
-                        </li>
-                        <li>
-                            <a href="icons-unicons.html">Unicons</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false" aria-controls="sidebarCharts" class="side-nav-link">
-                    <i class="uil-chart"></i>
-                    <span> Charts </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarCharts">
-                    <ul class="side-nav-second-level">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false" aria-controls="sidebarApexCharts">
-                                <span> Apex Charts </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarApexCharts">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="charts-apex-area.html">Area</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-bar.html">Bar</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-bubble.html">Bubble</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-candlestick.html">Candlestick</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-column.html">Column</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-heatmap.html">Heatmap</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-line.html">Line</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-mixed.html">Mixed</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-timeline.html">Timeline</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-boxplot.html">Boxplot</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-treemap.html">Treemap</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-pie.html">Pie</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-radar.html">Radar</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-radialbar.html">RadialBar</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-scatter.html">Scatter</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-polar-area.html">Polar Area</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-apex-sparklines.html">Sparklines</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarChartJSCharts" aria-expanded="false" aria-controls="sidebarChartJSCharts">
-                                <span> ChartJS </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarChartJSCharts">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="charts-chartjs-area.html">Area</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs-bar.html">Bar</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs-line.html">Line</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs-other.html">Other</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="charts-brite.html">Britecharts</a>
-                        </li>
-                        <li>
-                            <a href="charts-sparkline.html">Sparklines</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
-                    <i class="uil-document-layout-center"></i>
-                    <span> Forms </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarForms">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="form-elements.html">Basic Elements</a>
-                        </li>
-                        <li>
-                            <a href="form-advanced.html">Form Advanced</a>
-                        </li>
-                        <li>
-                            <a href="form-validation.html">Validation</a>
-                        </li>
-                        <li>
-                            <a href="form-wizard.html">Wizard</a>
-                        </li>
-                        <li>
-                            <a href="form-fileuploads.html">File Uploads</a>
-                        </li>
-                        <li>
-                            <a href="form-editors.html">Editors</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false" aria-controls="sidebarTables" class="side-nav-link">
-                    <i class="uil-table"></i>
-                    <span> Tables </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarTables">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="tables-basic.html">Basic Tables</a>
-                        </li>
-                        <li>
-                            <a href="tables-datatable.html">Data Tables</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps" class="side-nav-link">
-                    <i class="uil-location-point"></i>
-                    <span> Maps </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarMaps">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="maps-google.html">Google Maps</a>
-                        </li>
-                        <li>
-                            <a href="maps-vector.html">Vector Maps</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false" aria-controls="sidebarMultiLevel" class="side-nav-link">
-                    <i class="uil-folder-plus"></i>
-                    <span> Multi Level </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarMultiLevel">
-                    <ul class="side-nav-second-level">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel">
-                                <span> Second Level </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarSecondLevel">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="javascript: void(0);">Item 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript: void(0);">Item 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false" aria-controls="sidebarThirdLevel">
-                                <span> Third Level </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarThirdLevel">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="javascript: void(0);">Item 1</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false" aria-controls="sidebarFourthLevel">
-                                            <span> Item 2 </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 2.1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 2.2</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
 
 
 

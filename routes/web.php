@@ -37,8 +37,9 @@ Route::get('blog', [PostController::class,'index'])->name('blog');
 Route::get('contact', [ContactController::class,'index'])->name('contact'); 
 
 
-
 Route::get('/dashboard',[UserController::class,'connect'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('get-artiste', [UserController::class,'index'])->middleware(['auth','verified'])->name('get-artiste');
+Route::post('add-artiste',[UserController::class, 'store'])->middleware(['auth','verified'])->name('add-artiste');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

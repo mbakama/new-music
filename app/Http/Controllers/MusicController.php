@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class MusicController extends Controller
 {
@@ -151,6 +152,5 @@ class MusicController extends Controller
         }
     }
     // Utilisez la fonction getAlbumInfo pour récupérer les informations de votre album
-
-    
+  
 }

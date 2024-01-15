@@ -26,14 +26,8 @@
 
             <section id="video" class="video"> 
                 <div class="video-container">
-                    <video controls style="max-width: 100%; height: auto">
-                                   
-                              <source src="assets/video/compos.mp4" type="video/mp4" />
-                                     
-                              <!-- <source src="chemin_vers_la_video.webm" type="video/webm"> -->
-                                      Votre navigateur ne prend pas en charge la lecture de vidéos.  
-                                 
-                            </video>
+                    <iframe width="1200" height="580" src="https://www.youtube.com/embed/YssNRRH3zUE?si=E2DmpX3gzgdqyqHW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+                    
                   </div>
             </section>
             <!-- About Section - Home Page -->
@@ -207,7 +201,7 @@
                         @foreach($users as $artist)
                         <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
-                                <img src="{{ asset('storage/'. $value->artist) }}" class="img-fluid" alt="">
+                                <img src="{{ asset('storage/'. $artist->photo) }}" class="img-fluid" alt="">
                                 <div class="social">
                                     <a href="#"><i class="bi bi-twitter"></i></a>
                                     <a href="#"><i class="bi bi-facebook"></i></a>

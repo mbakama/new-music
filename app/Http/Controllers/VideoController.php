@@ -9,7 +9,8 @@ class VideoController extends Controller
 {
     public function List()
     {
-        $affs = Video::with('user')->get();
+        $affs = Video::with('user')->paginate(10);
+        
         return view('video', compact('affs'));
     }
 }

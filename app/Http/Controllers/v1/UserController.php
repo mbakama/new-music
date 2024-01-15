@@ -16,18 +16,20 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        if(empty($users))
-        {
-            return response()->json([
-                "status" => "success",
-                "data"=>$users
-            ], 200);
-        } else {
-            return response()->json([
-                "status"=> "error",
-                "data"=>"not fund"
-            ], 404);
-        }
+        return view('admin.artiste',compact('users'));
+
+        // if(empty($users))
+        // {
+        //     return response()->json([
+        //         "status" => "success",
+        //         "data"=>$users
+        //     ], 200);
+        // } else {
+        //     return response()->json([
+        //         "status"=> "error",
+        //         "data"=>"not fund"
+        //     ], 404);
+        // }
     }
    public function connect()
    {
@@ -44,7 +46,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -52,6 +54,27 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // $validated = $request->validate([
+        //     'firstname' => 'required|max:25',
+        //     'username' => 'required|max:25',
+        // ]);
+
+
+
+        $add = new User;
+
+        $add->prenom = $request->firstname;
+        $add->name = $request->username;
+        $add->email = $request->emailaddress;
+        $add->sexe = $request->genre;
+        $add->role = $request->role;
+        $add->adresse = "44, campus";
+
+        // dd($add);
+        $add->save();
+
+        dd($add);
+
         
     }
 

@@ -46,7 +46,9 @@
                         <article> 
                             {{-- <a href="https://www.youtube.com/watch?v=XXXXXXXXXXX">Regarder la vidéo sur YouTube</a> --}}
                             <div class="video-container" style="margin-bottom: 10px">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $aff->id_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/{{ $aff->id_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
                               </div>
                               <span>Interpreté par :</span>
                               <div class="d-flex align-items-center">
@@ -65,9 +67,10 @@
 
                 <div class="pagination d-flex justify-content-center">
                     <ul>
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="#">
+                            {{ $affs->links() }}
+                            </a></li>
+                        
                     </ul>
                 </div><!-- End pagination -->
 

@@ -65,6 +65,20 @@
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
 
+    <script>
+        // document.getElementById('myForm').addEventListener('submit', function(event) {
+        //     var inputs = this.querySelectorAll('input');
+        //     var emptyInputs = Array.from(inputs).filter(function(input) {
+        //         return input.value.trim() === '';
+        //     });
+
+        //     if (emptyInputs.length > 0) {
+        //         event.preventDefault();
+        //         event.stopPropagation();
+        //     }
+        // }, false);
+    </script>
+
 </body>
 
 </html>
