@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\Http\Controllers\Controller;
+use App\Mail\ContactMail;
 use App\Models\User;
-use illuminate\Support\Facades\Auth;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -108,5 +111,37 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function send(Request $request)
+    {
+        // $data = new Contact;
+
+        // $data->name = $request->name;
+        // $data->email = $request->email;
+        // $data->subject = $request->subject;
+        // $data->message = $request->message;
+
+        // $data->save();
+
+        // return response()->json("success", "message envoyé avec success");
+
+        $request->validate(
+            [
+                'email' =>['required','email:users'],
+                'name' =>['required'],
+                'message' =>['required']
+            ]
+        );
+
+        $data =[
+            'email' =>$request->email,
+            'name' =>$request->name,
+            'message' =>$request->message,
+            'subject' =>$request->subject,
+        ];
+
+        Mail::to('hectormbakama92@gmail.com')->send(new ContactMail($data));
+        return back();
     }
 }

@@ -41,7 +41,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4 posts-list">
-                    @foreach($affs as $aff)
+                    @foreach($videos as $aff)
                     <div class="col-xl-4 col-lg-6">
                         <article> 
                             {{-- <a href="https://www.youtube.com/watch?v=XXXXXXXXXXX">Regarder la vidéo sur YouTube</a> --}}
@@ -68,7 +68,7 @@
                 <div class="pagination d-flex justify-content-center">
                     <ul>
                         <li><a href="#">
-                            {{ $affs->links() }}
+                            {{ $videos->links() }}
                             </a></li>
                         
                     </ul>

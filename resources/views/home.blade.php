@@ -482,8 +482,9 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                            <form action="{{ route('add-message') }}" method="post"  data-aos="fade-up"
                                 data-aos-delay="200">
+                                @csrf
                                 <div class="row gy-4">
                                     <div class="col-md-6">
                                         <input type="text" name="name" class="form-control"

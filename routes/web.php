@@ -41,6 +41,19 @@ Route::get('/dashboard',[UserController::class,'connect'])->middleware(['auth', 
 Route::get('get-artiste', [UserController::class,'index'])->middleware(['auth','verified'])->name('get-artiste');
 Route::post('add-artiste',[UserController::class, 'store'])->middleware(['auth','verified'])->name('add-artiste');
 
+Route::post('message',[UserController::class, 'send'])->name('add-message');
+Route::get('/test-mail', function () {
+    $to = 'recipient@example.com';
+    $subject = 'Test Email';
+    $message = 'This is a test email from Laravel.';
+
+    Mail::raw($message, function ($mail) use ($to, $subject) {
+        $mail->to($to)->subject($subject);
+    });
+
+    return 'Test email sent successfully.';
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
